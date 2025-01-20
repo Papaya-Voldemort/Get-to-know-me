@@ -1,0 +1,147 @@
+/* Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+/* Universal Styles */
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: #0d1117; /* Dark GitHub-like background */
+    color: #c9d1d9; /* Light gray text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #161b22; /* Slightly lighter black */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    color: #58a6ff; /* Bright blue for logo */
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav-links li a {
+    color: #c9d1d9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.nav-links li a:hover {
+    color: #58a6ff;
+}
+
+/* Main Container for Pages */
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #161b22; /* Slightly lighter than body */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border: 1px solid #21262d; /* Subtle border to separate content */
+}
+
+/* Headings */
+h1, h2 {
+    color: #58a6ff;
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #adb5bd; /* Faded text for paragraphs */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Link Styling (Clickable Links) */
+a {
+    color: #bc91ff; /* light purple for extra uniqueness */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: #a370f7; /* slightly darker purple hover */
+}
+
+/* Form Styling */
+form {
+    background-color: #0d1117;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    border: 1px solid #21262d;
+}
+label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #c9d1d9;
+}
+input[type="email"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #21262d;
+    border-radius: 5px;
+    background-color: #161b22;
+    color: #c9d1d9;
+    font-size: 1rem;
+}
+textarea {
+    resize: vertical;
+}
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+/* Buttons */
+.btn {
+    background-color: #238636; /* GitHub-style green */
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #2ea043;
+}
+
+/* Footer */
+footer {
+    background-color: #161b22;
+    text-align: center;
+    padding: 10px 20px;
+    color: #adb5bd;
+    margin-top: 20px;
+}
+
+/* Admin Messages */
+.message {
+    background: #21262d;
+    color: #c9d1d9;
+    padding: 15px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
