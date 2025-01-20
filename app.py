@@ -7,9 +7,9 @@ app = Flask(__name__)
 # Configure mail server settings using environment variables for security
 app.config['MAIL_SERVER'] = 'smtp.zoho.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True  # Secure connection using SSL
-app.config['MAIL_USERNAME'] = "admin@elinelson.me"  # Your Zoho email
-app.config['MAIL_PASSWORD'] = "Elin2010!!"  # Your Zoho password or app password
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 
 mail = Mail(app)
 
