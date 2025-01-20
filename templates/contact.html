@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  </head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Me</title>
-<link rel="stylesheet" href="/static/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="container">
-    <a class="logo" href="/">Eli's Space</a>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-<div class="content">
-  <h1>Contact Me</h1>
-  <form method="POST" action="/contact" class="form">
-    {% if error %}
-    <div class="alert alert-danger" role="alert" aria-live="assertive">
-      {{ error }}
+  <nav class="navbar">
+    <div class="container">
+      <a class="logo" href="/">Eli's Space</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
     </div>
-    {% endif %}
-    {% if thank_you %}
-    <div class="alert alert-success" role="alert" aria-live="assertive">
-      Thank you for your message! I'll get back to you soon.
-    </div>
-    {% endif %}
+  </nav>
 
-    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-    <div class="mb-3">
-      <label for="email" class="form-label">Your Email</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-    </div>
-    <div class="mb-3">
-      <label for="message" class="form-label">Your Message</label>
-      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Send Message</button>
-  </form>
-</div>
-<footer>
-  <p>© 2023 Eli's Space</p>
-</footer>
+  <div class="content">
+    <h1>Contact Me</h1>
+    <form method="POST" action="/contact" class="form">
+      {% if error %}
+      <div class="alert alert-danger" role="alert" aria-live="assertive">
+        {{ error }}
+      </div>
+      {% endif %}
+      {% if thank_you %}
+      <div class="alert alert-success" role="alert" aria-live="assertive">
+        Thank you for your message! I'll get back to you soon.
+      </div>
+      {% endif %}
+
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Your Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2023 Eli's Space</p>
+  </footer>
 
 </body>
 </html>
