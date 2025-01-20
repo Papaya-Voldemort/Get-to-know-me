@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # Enable CORS for cross-origin requests
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://your-frontend-domain.vercel.app"}})
 
 # Configure mail server settings
 app.config['MAIL_SERVER'] = 'smtp.zoho.com'
