@@ -13,18 +13,15 @@ app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 
 mail = Mail(app)
 
-
 # Homepage
 @app.route('/')
 def home():
     return render_template('home.html')
 
-
 # About Me page
 @app.route('/about')
 def about():
     return render_template('about.html')
-
 
 @app.route('/admin')
 def admin():
@@ -37,7 +34,6 @@ def admin():
         pass
 
     return render_template('admin.html', messages=messages)
-
 
 # Contact Me form (handles GET and POST requests)
 @app.route("/contact", methods=["GET", "POST"])
@@ -60,18 +56,9 @@ def contact():
         message_to_user.body = "Thank you for your message! I'll get back to you as soon as possible."
         mail.send(message_to_user)
 
-        return "Message sent successfully!"
+        return render_template("contact.html", thank_you=True)
 
-    return '''
-    <form method="POST">
-        Your email: <input type="email" name="email" required>
-        <br>
-        Your message: <textarea name="message" required></textarea>
-        <br>
-        <button type="submit">Send</button>
-    </form>
-    '''
-
+    return render_template("contact.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
